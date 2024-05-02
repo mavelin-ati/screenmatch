@@ -1,9 +1,8 @@
-import java.security.KeyStore;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Bienvenidos a la inmersión Java, bienvenidos!");
+        System.out.println("Bienvenidos Inmersión Java!");
         //System.out.println("Película Matrix");
 
         // Declaración de variables
@@ -17,7 +16,11 @@ public class Main {
                 el final es interesante
                 """;
         double mediaEvaluacionUsuario = 0;
+
+        Scanner teclado = new Scanner(System.in);
+        double notaMatrix = 0;
         int numeroUsuario = 3;
+        int iterador = 0;
 
         System.out.println("Película: " + nombre);
         System.out.println("Fecha de lanzamiento: " + fechaLanzamiento);
@@ -34,11 +37,19 @@ public class Main {
         }
 
         for (int i = 0; i < numeroUsuario; i++) {
-            Scanner teclado = new Scanner(System.in);
             System.out.println("Ingresa la evaluación de Matrix: ");
-            double notaMatrix = teclado.nextDouble();
+            notaMatrix = teclado.nextDouble();
             mediaEvaluacionUsuario = mediaEvaluacionUsuario + notaMatrix;
         }
         System.out.println("La media de la puntuación de la película Matrix es: " + mediaEvaluacionUsuario / numeroUsuario);
+        mediaEvaluacionUsuario = 0;
+
+        while (iterador < numeroUsuario) {
+            System.out.println("Ingresa la nueva evaluación de Matrix: ");
+            notaMatrix = teclado.nextDouble();
+            mediaEvaluacionUsuario = mediaEvaluacionUsuario + notaMatrix;
+            iterador++;
+        }
+        System.out.println("La media de la nueva puntuación de la película Matrix es: " + mediaEvaluacionUsuario / numeroUsuario);
     }
 }
